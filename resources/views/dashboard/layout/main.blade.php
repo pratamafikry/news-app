@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="/assets-dashboard/chartist/css/chartist.min.css">
     <link rel="stylesheet" href="/assets-dashboard/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css">
     <!-- Custom Stylesheet -->
+    <link href="/assets-dashboard/plugins/tables/css/datatable/dataTables.bootstrap4.min.css" rel="stylesheet">
     <link href="/assets-dashboard/css/style.css" rel="stylesheet">
 
 </head>
@@ -169,9 +170,9 @@
     <!-- ChartistJS -->
     <script src="/assets-dashboard/plugins/chartist/js/chartist.min.js"></script>
     <script src="/assets-dashboard/plugins/chartist-plugin-tooltips/js/chartist-plugin-tooltip.min.js"></script>
-
-
-
+    <script src="/assets-dashboard/plugins/tables/js/jquery.dataTables.min.js"></script>
+    <script src="/assets-dashboard/plugins/tables/js/datatable/dataTables.bootstrap4.min.js"></script>
+    <script src="/assets-dashboard/plugins/tables/js/datatable-init/datatable-basic.min.js"></script>
     <script src="/assets-dashboard/js/dashboard/dashboard-1.js"></script>
 
 </body>

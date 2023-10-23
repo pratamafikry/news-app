@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DashboardNewsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,3 +23,4 @@ Route::get('/', function () {
 Route::get('/login', [AuthController::class, 'index']);
 Route::get('/register', [AuthController::class, 'register']);
 Route::get('/dashboard', [DashboardController::class, 'index']);
+Route::resource('/dashboard/news', DashboardNewsController::class);

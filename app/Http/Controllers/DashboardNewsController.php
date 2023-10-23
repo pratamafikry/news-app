@@ -17,7 +17,7 @@ class DashboardNewsController extends Controller
      */
     public function index()
     {
-        return view('dashboard.news', [
+        return view('dashboard.news.index', [
             'posts' => News::all()
         ]);
     }
