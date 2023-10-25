@@ -23,6 +23,7 @@
                             <table class="table table-striped table-bordered zero-configuration">
                                 <thead>
                                     <tr>
+                                        <th>No.</th>
                                         <th>Judul</th>
                                         <th>Tgl. Buat</th>
                                         <th>Body</th>
@@ -33,6 +34,7 @@
                                 <tbody>
                                     @foreach ($posts as $post)
                                     <tr>
+                                        <td>{{$loop->iteration}}</td>
                                         <td>{{$post->title}}</td>
                                         <td>{{$post->created_at}}</td>
                                         <td>{{$post->excerpt}}</td>
@@ -40,8 +42,8 @@
                                         <td>
                                             <button type="button" class="btn mb-1 btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Aksi </button>
                                             <div class="dropdown-menu">
-                                                <a class="dropdown-item" href="#">Lihat Postingan</a>
-                                                <a class="dropdown-item" href="#">Edit Postingan</a>
+                                                <a class="dropdown-item" href="/dashboard/news/{{$post->slug}}">Lihat Postingan</a>
+                                                <a class="dropdown-item" href="/dashboard/news/{{$post->slug}}/edit">Edit Postingan</a>
                                             </div>
                                         </td>
                                     </tr>
@@ -49,6 +51,7 @@
                                 </tbody>
                                 <tfoot>
                                     <tr>
+                                        <th>No.</th>
                                         <th>Judul</th>
                                         <th>Tgl. Buat</th>
                                         <th>Body</th>

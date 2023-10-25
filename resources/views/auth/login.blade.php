@@ -10,12 +10,13 @@
                         <div class="card-body pt-5">
                             <a class="text-center" href="index.html"> <h4>Login</h4></a>
     
-                            <form class="mt-5 mb-5 login-input">
+                            <form action="/login" method="post" class="mt-5 mb-5 login-input">
+                                @csrf
                                 <div class="form-group">
-                                    <input type="username" class="form-control" placeholder="Username">
+                                    <input type="username" class="form-control" placeholder="Username" name="username" id="username">
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" class="form-control" placeholder="Password">
+                                    <input type="password" class="form-control" placeholder="Password" name="password" id="password">
                                 </div>
                                 <button class="btn login-form__btn submit w-100">Sign In</button>
                             </form>

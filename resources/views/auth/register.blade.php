@@ -10,15 +10,39 @@
                             
                                 <a class="text-center" href="index.html"> <h4>Rosella</h4></a>
     
-                            <form class="mt-5 mb-5 login-input">
+                            <form action="/register" method="post" class="mt-5 mb-5 login-input">
+                                @csrf
                                 <div class="form-group">
-                                    <input type="text" class="form-control"  placeholder="Name" required>
+                                    <input type="text" class="form-control"  placeholder="Name" name="name" id="name" required>
+                                    @error('name')
+                                        <div class="invalid-feedback">
+                                            {{$message}}
+                                        </div>
+                                    @enderror
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control"  placeholder="Email" required>
+                                    <input type="text" class="form-control"  placeholder="Username" name="username" id="username" required>
+                                    @error('username')
+                                        <div class="invalid-feedback">
+                                            {{$message}}
+                                        </div>
+                                    @enderror
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" class="form-control" placeholder="Password" required>
+                                    <input type="email" class="form-control"  placeholder="Email" name="email" id="email" required>
+                                    @error('email')
+                                        <div class="invalid-feedback">
+                                            {{$message}}
+                                        </div>
+                                    @enderror
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" placeholder="Password" name="password" id="password" required>
+                                    @error('password')
+                                        <div class="invalid-feedback">
+                                            {{$message}}
+                                        </div>
+                                    @enderror
                                 </div>
                                 <button class="btn login-form__btn submit w-100">Sign in</button>
                             </form>

@@ -18,8 +18,16 @@
     <link rel="stylesheet" href="/assets-dashboard/chartist/css/chartist.min.css">
     <link rel="stylesheet" href="/assets-dashboard/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css">
     <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="/assets-dashboard/css/trix.css">
+    <style>
+        trix-toolbar [data-trix-button-group="file-tools"]{
+            display: none;
+        }
+    </style>
+    <link href="/assets-dashboard/plugins/summernote/dist/summernote.css" rel="stylesheet">
     <link href="/assets-dashboard/plugins/tables/css/datatable/dataTables.bootstrap4.min.css" rel="stylesheet">
     <link href="/assets-dashboard/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
 
@@ -147,6 +155,8 @@
     <!--**********************************
         Scripts
     ***********************************-->
+    <script src="/assets-dashboard/plugins/summernote/dist/summernote.min.js"></script>
+    <script src="/assets-dashboard/plugins/summernote/dist/summernote-init.js"></script>
     <script src="/assets-dashboard/plugins/common/common.min.js"></script>
     <script src="/assets-dashboard/js/custom.min.js"></script>
     <script src="/assets-dashboard/js/settings.js"></script>
@@ -174,6 +184,14 @@
     <script src="/assets-dashboard/plugins/tables/js/datatable/dataTables.bootstrap4.min.js"></script>
     <script src="/assets-dashboard/plugins/tables/js/datatable-init/datatable-basic.min.js"></script>
     <script src="/assets-dashboard/js/dashboard/dashboard-1.js"></script>
+    <script src="/assets-dashboard/js/trix.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    @if (session()->has('success'))
+            <script>
+                toastr.success("{{session('success')}}")
+            </script>
+        @endif
+
 
 </body>
 

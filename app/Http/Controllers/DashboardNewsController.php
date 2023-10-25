@@ -40,7 +40,7 @@ class DashboardNewsController extends Controller
         $validatedData = $request->validate([
             'title' => 'required',
             'category_id' => 'required',
-            'slug' => 'required|unique:posts',
+            'slug' => 'required|unique:news',
             'image' => 'image|file|max:5000',
             'body' => 'required'
         ]);
@@ -122,4 +122,5 @@ class DashboardNewsController extends Controller
 
         return redirect('/dashboard/news')->with('success', 'Berita berhasil dihapus');
     }
+
 }

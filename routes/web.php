@@ -20,7 +20,10 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/login', [AuthController::class, 'index']);
+Route::get('/login', [AuthController::class, 'index'])->name('login')->middleware('guest');
+Route::post('/login', [AuthController::class, 'authenticate']);
+Route::post('/logout', [AuthController::class, 'logout']);
 Route::get('/register', [AuthController::class, 'register']);
-Route::get('/dashboard', [DashboardController::class, 'index']);
-Route::resource('/dashboard/news', DashboardNewsController::class);
+Route::post('/register', [AuthController::class, 'store']);
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
+Route::resource('/dashboard/news', DashboardNewsController::class)->middleware('auth');
