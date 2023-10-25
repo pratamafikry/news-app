@@ -10,7 +10,8 @@
                 <div class="col p-md-0">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
-                        <li class="breadcrumb-item active"><a href="javascript:void(0)">Home</a></li>
+                        <li class="breadcrumb-item active"><a href="javascript:void(0)">Berita</a></li>
+                        <li class="breadcrumb-item active"><a href="javascript:void(0)">Lihat</a></li>
                     </ol>
                 </div>
             </div>
@@ -21,7 +22,28 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores repellendus molestiae exercitationem voluptatem tempora quo dolore nostrum dolor consequuntur itaque, alias fugit. Architecto rerum animi velit, beatae corrupti quos nam saepe asperiores aliquid quae culpa ea reiciendis ipsam numquam laborum aperiam. Id tempore consequuntur velit vitae corporis, aspernatur praesentium ratione!</p>
+                                <h4 class="card-title">Data Postingan</h4>
+                                <article>
+                                    <h2>{{$post->title}}</h2>
+                                    <p>Author : {{$post->author->name}} in {{$post->category->category}}</p>
+                                    @if ($post->image)
+                                    <div style="max-height: 350px; overflow:hidden;">
+                                    <img src="{{ asset('storage/'.$post->image)}}" class="card-img-top" alt="{{$post->category->name}}">
+                                    </div>
+                                    @else
+                                    <img src="https://source.unsplash.com/1200x400?{{$post->category->name}}" class="card-img-top" alt="{{$post->category->name}}">
+                                    @endif
+                                    <div class="mt-3">
+                                    {!! $post->body !!}
+                                    </div>
+                                </article>
+                                <a href="/dashboard/news" class="btn btn-info" style="margin-top: 20px"><span class="bi bi-arrow-left"></span> Kembali ke daftar postingan</a>
+                                <a href="/dashboard/news/{{$post->slug}}/edit" class="btn btn-warning" style="margin-top: 20px"> <span class="bi bi-pencil"></span> Edit Postingan</a>
+                                <form action="/dashboard/news/{{$post->slug}}" method="post" class="d-inline">
+                                @method('delete')
+                                @csrf
+                                <button class="btn btn-danger" onclick="return confirm('Apakah anda yakin?')" style="margin-top: 20px"><span class="bi bi-trash3"></span> Hapus Postingan</button>
+                                </form>
                             </div>
                         </div>
                     </div>

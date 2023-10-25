@@ -7,7 +7,7 @@
         <div class="col p-md-0">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
-                <li class="breadcrumb-item active"><a href="javascript:void(0)">Home</a></li>
+                <li class="breadcrumb-item active"><a href="javascript:void(0)">Berita</a></li>
             </ol>
         </div>
     </div>
@@ -28,6 +28,7 @@
                                         <th>Tgl. Buat</th>
                                         <th>Body</th>
                                         <th>Categori</th>
+                                        <th>Status</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
@@ -39,6 +40,7 @@
                                         <td>{{$post->created_at}}</td>
                                         <td>{{$post->excerpt}}</td>
                                         <td>{{$post->category->category}}</td>
+                                        <td>{{$post->status}}</td>
                                         <td>
                                             <button type="button" class="btn mb-1 btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Aksi </button>
                                             <div class="dropdown-menu">
@@ -56,6 +58,7 @@
                                         <th>Tgl. Buat</th>
                                         <th>Body</th>
                                         <th>Kategori</th>
+                                        <th>Status</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </tfoot>
