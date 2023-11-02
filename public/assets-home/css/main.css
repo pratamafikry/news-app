@@ -255,6 +255,10 @@ p {
   transition: all 0.3s ease-out 0s;
 }
 
+img.rounded-corners {
+  border-radius: 10px;
+}
+
 /* line 53, ../../SAIFUL/Running_project/248. Magazine & News/assets/scss/_common.scss */
 .f-left {
   float: left;

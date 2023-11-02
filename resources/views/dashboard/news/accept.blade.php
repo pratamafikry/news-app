@@ -29,12 +29,11 @@
                                         <th>Body</th>
                                         <th>Categori</th>
                                         <th>Status</th>
-                                        <th>Views</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($posts as $post)
+                                    @foreach ($news as $post)
                                     <tr>
                                         <td>{{$loop->iteration}}</td>
                                         <td>{{$post->title}}</td>
@@ -42,7 +41,6 @@
                                         <td>{{$post->excerpt}}</td>
                                         <td>{{$post->category->category}}</td>
                                         <td>{{$post->status}}</td>
-                                        <td>{{$post->count}}</td>
                                         <td>
                                             <button type="button" class="btn mb-1 btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Aksi </button>
                                             <div class="dropdown-menu">
@@ -61,7 +59,6 @@
                                         <th>Body</th>
                                         <th>Kategori</th>
                                         <th>Status</th>
-                                        <th>Views</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </tfoot>

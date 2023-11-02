@@ -20,6 +20,8 @@ return new class extends Migration
             $table->text('excerpt');
             $table->text('body');
             $table->string('image')->nullable();
+            $table->string('status')->default('Menunggu Persetujuan');
+            $table->string('count')->nullable();
             $table->timestamp('published_at')->nullable();
             $table->timestamps();
         });

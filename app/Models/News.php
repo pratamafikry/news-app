@@ -2,12 +2,15 @@
 
 namespace App\Models;
 
+use Coderflex\Laravisit\Concerns\CanVisit;
+use Coderflex\Laravisit\Concerns\HasVisits;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class News extends Model
+class News extends Model implements CanVisit
 {
     use HasFactory;
+    use HasVisits;
     protected $guarded = ['id'];
     protected $with = ['category', 'author'];
 

@@ -14,12 +14,17 @@ class NewsController extends Controller
     public function index()
     {
         return view('news', [
-            "posts" => News::latest(),
+            "posts" => News::latest()->get(4),
         ]);
     }
 
     public function show(News $news)
     {
+        $news->visit();
+        $update = [
+            'count' => $news->count + 1,
+        ];
+        $news->update($update);
         return view('newsdetail', [
             "post" => $news
         ]);

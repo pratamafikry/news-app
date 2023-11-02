@@ -123,4 +123,11 @@ class DashboardNewsController extends Controller
         return redirect('/dashboard/news')->with('success', 'Berita berhasil dihapus');
     }
 
+    public function accept()
+    {
+        return view('dashboard.news.accept',[
+            'news' => News::all()
+        ]);
+    }
+
 }
